@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const winston = require('winston')
 const Feedback = require('./index')
-const config = require('./build/src/config')
+const config = require('./config')
 
 // logger setup
 winston.remove(winston.transports.Console)
