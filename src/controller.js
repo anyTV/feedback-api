@@ -14,7 +14,7 @@ class Controller extends BaseClass {
   record (req, res) {
     let required_fields = _(config.FIELDS).filter('required').map(f => f.name).value()
     // validate
-    if (_.some(required_fields, field => _.isEmpty(req.body, field))) {
+    if (_.some(required_fields, field => _.isEmpty(_.get(req.body, field)))) {
       return res.status(400).json({
         code: 'FAILED',
         message: 'MISSING REQUIRED FIELD'

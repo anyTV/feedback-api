@@ -6,7 +6,8 @@
   "scripts": {
     "build": "eslint ./ && rimraf build/ && babel ./ --out-dir build/ --ignore ./node_modules,./.babelrc,./npm-debug.log --copy-files",
     "dev": "npm run build && cross-env NODE_ENV=development node server",
-    "prod": "npm run build && cross-env NODE_ENV=production node server"
+    "prod": "npm run build && cross-env NODE_ENV=production node server",
+    "prepublish": "npm run build"
   },
   "author": "",
   "license": "ISC",
